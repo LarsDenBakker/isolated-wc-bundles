@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "start": "es-dev-server --app-index index.html --node-resolve --open",
+    "build": "rm -rf dist && npm run build:a && npm run build:b && npm run build:c",
+    "build:a": "rollup -c packages/component-a/rollup.config.js",
+    "build:b": "rollup -c packages/component-b/rollup.config.js",
+    "build:c": "rollup -c packages/component-c/rollup.config.js",
+    "start:build": "es-dev-server --app-index index-build.html --open"
+  },
+  "dependencies": {
+    "es-dev-server": "^1.18.1",
+    "lit-element": "^2.2.1",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/preset-env": "^7.6.2",
+    "@webcomponents/webcomponentsjs": "^2.3.0",
+    "babel-plugin-bundled-import-meta": "^0.3.1",
+    "babel-plugin-template-html-minifier": "^3.1.0",
+    "core-js-bundle": "^3.2.1",
+    "regenerator-runtime": "^0.13.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "systemjs": "^6.1.2",
+    "whatwg-fetch": "^3.0.0"
+  }
+}

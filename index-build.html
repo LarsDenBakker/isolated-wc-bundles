@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <!-- polyfills for es2015 features, nomodule makes this load only on IE11 -->
+  <script src="./node_modules/core-js-bundle/minified.js" nomodule></script>
+  <!-- fetch is used by systemjs, we need to load it for IE11 -->
+  <script src="./node_modules/whatwg-fetch/dist/fetch.umd.js" nomodule></script>
+  <!-- load web component polyfills using feature detection -->
+  <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <!-- systemjs is a polyfill for es modules -->
+  <script src="./node_modules/systemjs/dist/s.min.js"></script>
+
+  <!-- needed for running web components compiled to es5 on browsers with native support -->
+  <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <!-- needed for running async functions compiled to es5 -->
+  <script src="./node_modules/regenerator-runtime/runtime.js"></script>
+
+  <!-- load the components, can use System.import('./path/to/file.js') or script type="systemjs-module" -->
+  <script type="systemjs-module" src="./dist/component-a.js"></script>
+  <script type="systemjs-module" src="./dist/component-b.js"></script>
+  <script type="systemjs-module" src="./dist/component-c.js"></script>
+</head>
+
+<body>
+
+  <component-a></component-a>
+  <component-b></component-b>
+  <component-c></component-c>
+
+</body>
+
+</html>
